@@ -2,25 +2,21 @@
  * Earthling Native — Destination Components
  * Figma: ▣ Screens & Assets > Mobile / Earthling / AI Assistant / Suggestions
  *
- * DestinationRow   — single horizontal list item (thumb + info + tag + chevron)
+ * DestinationRow   — single horizontal list item (thumb + title + reason)
  * DestinationList  — scrollable list with section label and scroll-fade overlay
  */
 
 // ─── DestinationRow ───────────────────────────────────────────────────────────
 // Props:
-//   name       string  — destination name e.g. "Kyoto"
-//   location   string  — country/region e.g. "Japan"
-//   tag        string  — category label e.g. "CULTURE"
-//   image      string  — thumbnail image URL (optional; falls back to color swatch)
-//   color      string  — CSS color for the thumbnail placeholder (optional)
+//   title      string  — destination name + country e.g. "Kyoto, Japan"
+//   reason     string  — AI-generated reason e.g. "Based on your search"
+//   image      string  — thumbnail image URL
 //   divider    bool    — show bottom divider (default true)
 //   onPress    fn      — tap handler
 export function DestinationRow({
-  name,
-  location,
-  tag,
+  title,
+  reason,
   image,
-  color,
   divider = true,
   onPress,
 }) {
@@ -31,41 +27,19 @@ export function DestinationRow({
       role="button"
       tabIndex={0}
       onKeyDown={e => e.key === 'Enter' && onPress?.()}
-      aria-label={`${name}, ${location}`}
+      aria-label={title}
     >
       {/* Thumbnail */}
-      <div
-        className="destination-row__thumb"
-        style={color && !image ? { background: color } : undefined}
-      >
-        {image && <img src={image} alt={name} className="destination-row__thumb-img" />}
+      <div className="destination-row__thumb">
+        {image && <img src={image} alt={title} className="destination-row__thumb-img" />}
         <span className="destination-row__accent-dot" aria-hidden="true" />
       </div>
 
       {/* Info */}
       <div className="destination-row__info">
-        <span className="destination-row__name">{name}</span>
-        <span className="destination-row__location">{location}</span>
+        <span className="destination-row__title">{title}</span>
+        <span className="destination-row__reason">{reason}</span>
       </div>
-
-      {/* Tag pill */}
-      {tag && (
-        <span className="destination-row__tag" aria-label={`Category: ${tag}`}>
-          {tag}
-        </span>
-      )}
-
-      {/* Chevron */}
-      <svg
-        className="destination-row__chevron"
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M4 4L12 8L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
     </div>
   );
 }
@@ -78,7 +52,7 @@ export function DestinationRow({
 //   onSelect      fn      — called with the destination object when a row is tapped
 export function DestinationList({
   destinations = [],
-  sectionLabel = 'SUGGESTED FOR YOU',
+  sectionLabel = 'Suggested destinations',
   onSelect,
 }) {
   return (

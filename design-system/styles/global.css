@@ -284,7 +284,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .destination-row {
   display: flex;
   align-items: center;
-  gap: var(--space-4);          /* 14px */
+  gap: 14px;
   height: 88px;
   width: 100%;
   cursor: pointer;
@@ -310,7 +310,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .destination-row__accent-dot {
   position: absolute;
-  bottom: 6px; right: 6px;
+  bottom: 2px; right: 2px;
   width: 10px; height: 10px;
   border-radius: var(--radius-full);
   background: var(--accent-lime);
@@ -326,47 +326,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-width: 0;
   overflow: hidden;
 }
-.destination-row__name {
+.destination-row__title {
   display: block;
   font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 130%;
-  color: var(--text-primary);        /* --base */
+  font-size: var(--text-200);        /* 18px */
+  line-height: 1.3;
+  color: var(--text-primary);        /* --base #f3ffe3 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.destination-row__location {
+.destination-row__reason {
   display: block;
   font-family: var(--font-sans);
   font-size: 13px;
-  letter-spacing: 2%;
-  color: var(--text-muted);          /* --shade */
+  letter-spacing: 0.26px;
+  color: var(--text-muted);          /* --shade #e9f4d9 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Tag pill */
-.destination-row__tag {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 10px;
-  border-radius: var(--radius-full);
-  background: var(--color-dark-gray);
-  font-family: var(--font-sans);
-  font-size: 9px;
-  letter-spacing: 6%;
-  color: var(--accent-lime);
-}
-
-/* Chevron */
-.destination-row__chevron {
-  flex-shrink: 0;
-  color: var(--text-muted);
-  opacity: 0.5;
 }
 
 /* ─── DestinationList ──────────────────────────────────────── */
@@ -377,9 +355,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .destination-list__section-label {
   font-family: var(--font-sans);
-  font-size: 10px;
-  letter-spacing: 7%;
-  color: var(--color-sage);
+  font-size: var(--text-50);         /* 14px */
+  line-height: 1.45;
+  letter-spacing: 0.42px;
+  color: var(--text-muted);          /* --shade #e9f4d9 */
   padding: 0 var(--space-6);
   margin-bottom: var(--space-3);
 }
