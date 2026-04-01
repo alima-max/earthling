@@ -64,7 +64,7 @@ export function DestinationList({
       <div className="destination-list__scroll">
         {destinations.map((dest, i) => (
           <DestinationRow
-            key={dest.name}
+            key={dest.title}
             {...dest}
             divider={i < destinations.length - 1}
             onPress={() => onSelect?.(dest)}
