@@ -1,0 +1,99 @@
+/**
+ * Earthling Design System — CSS Custom Properties
+ * Auto-generated from design tokens. Edit tokens/colors.js etc. instead.
+ */
+
+:root {
+  /* ─── Color Primitives ─────────────────────────────────────── */
+  --color-lime:           #E4FF97;
+  --color-neon-green:     #67FF7F;
+  --color-dark-green:     #384318;
+  --color-sage:           #78834E;
+  --color-brown:          #6E6037;
+  --color-base:           #F3FFE3;
+  --color-shade:          #E9F4D9;
+  --color-black:          #202020;
+  --color-dark-gray:      #313230;
+  --color-violet-shade:   #89889D;
+  --color-translucent:    rgba(243, 255, 227, 0.65);
+
+  /* ─── Semantic (Theme 01 — Dark Green) ─────────────────────── */
+  --bg-primary:           var(--color-dark-green);
+  --bg-secondary:         var(--color-base);
+  --bg-surface:           var(--color-shade);
+  --bg-inverse:           var(--color-black);
+  --bg-translucent:       var(--color-translucent);
+
+  --text-primary:         var(--color-base);
+  --text-inverse:         var(--color-black);
+  --text-muted:           var(--color-shade);
+
+  --accent-lime:          var(--color-lime);
+  --accent-neon:          var(--color-neon-green);
+  --accent-sage:          var(--color-sage);
+
+  --border-default:       var(--color-shade);
+  --border-strong:        var(--color-black);
+
+  --icon-primary:         var(--color-base);
+  --icon-inverse:         var(--color-black);
+  --icon-accent:          var(--color-lime);
+
+  /* ─── Typography ───────────────────────────────────────────── */
+  --font-sans:            'Space Grotesk', sans-serif;
+  --font-mono:            'Space Mono', monospace;
+
+  --text-50:              14px;
+  --text-100:             16px;
+  --text-200:             18px;
+  --text-300:             22px;
+  --text-400:             26px;
+  --text-500:             36px;
+  --text-600:             52px;
+  --text-mono-450:        36px;
+
+  /* ─── Spacing ──────────────────────────────────────────────── */
+  --space-0:              0px;
+  --space-1:              2px;
+  --space-2:              4px;
+  --space-3:              8px;
+  --space-4:              12px;
+  --space-5:              16px;
+  --space-6:              20px;
+  --space-7:              24px;
+  --space-8:              32px;
+  --space-9:              40px;
+  --space-10:             48px;
+  --space-11:             56px;
+  --space-12:             64px;
+  --space-14:             80px;
+  --space-16:             96px;
+
+  /* ─── Border Radius ────────────────────────────────────────── */
+  --radius-none:          0px;
+  --radius-sm:            4px;
+  --radius-md:            8px;
+  --radius-lg:            12px;
+  --radius-xl:            16px;
+  --radius-2xl:           24px;
+  --radius-3xl:           32px;
+  --radius-full:          999px;
+
+  /* ─── Shadows ──────────────────────────────────────────────── */
+  --shadow-soft:          0px 0px 18px rgba(0, 0, 0, 0.20);
+  --shadow-card:          0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* ─── Blur ─────────────────────────────────────────────────── */
+  --blur-translucent:     blur(32px);
+  --blur-chat-chip:       blur(8px);
+
+  /* ─── Breakpoints (for reference — use media queries) ──────── */
+  --bp-mobile:            375px;
+  --bp-tablet:            800px;
+  --bp-desktop:           1440px;
+}
+
+/* ─── Theme 02 — Brown base ─────────────────────────────────────────────────── */
+[data-theme="02"] {
+  --bg-primary: var(--color-brown);
+}
